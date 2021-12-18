@@ -1,0 +1,65 @@
+<!-- Rest APIs and HTTP requests -->
+
+<!-- API:- Application Programming Interface
+           1)  contract provided by one piece of software to another
+           2)  structured request and response
+           3)  we just worked with an API that takes a request and responds with jokes-->
+
+
+<!-- REST APIs :- representational state transfer
+                1) architecture style for designing networked application
+                2) relies on a stateless,client-sever protocol,almost always HTTP
+                3) treats server objects as resources that can be created or destroyed
+                4) can be used by virtually any programming language
+                5) all apis have their own rules and structures
+                6) A REST API is a way for two computer systems to communicate over
+                   HTTP in a similar way to web browsers and servers. 
+                7) uses HTTP requests to access and use data. That data can be used to
+                   GET, PUT, POST and DELETE data types, which refers to the reading, 
+                   updating, creating and deleting of operations concerning resources.
+                8) An API is an application programming interface. ...(API is a messenger)
+                   REST determines how the API looks like. ...(REST lets us use http requests to format this message )
+                   Each URL is called a request while the data sent back to you is called a response.-->
+
+
+<!-- Types of HTTP requests:-
+                 GET
+                 The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+
+                 HEAD
+                Same as GET, but transfers the status line and header section only.
+
+                POST
+                A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+
+                PUT
+                Replaces all current representations of the target resource with the uploaded content.
+
+                DELETE
+                Removes all current representations of the target resource given by a URI.
+
+                CONNECT
+                Establishes a tunnel to the server identified by a given URI.
+
+                OPTIONS(return the supported http method)
+                Describes the communication options for the target resource.
+
+                TRACE
+                Performs a message loop-back test along the path to the target resource.
+             
+                PATCH
+                update partial resources-->
+
+
+<!-- API Endpoints:- url that we access to do certain things 
+                     GET
+                     http://someurl.com/api/users   (get all users)
+                     GET
+                    http://someurl.com/api/users/1   (GET 1 USER)
+                    POST
+                    http://someurl.com/api/users     (ADD USER, SEND ALONG WITH DATA)
+                    PUT
+                    http://someurl.com/api/users/1   (UPDATE USER, SEND DATA ALSO)
+                    DELETE
+                    http://someurl.com/api/users/1   (DELETE USER , SEND THE DATA ALSO ALONG WITH REQUEST)-->
+                                

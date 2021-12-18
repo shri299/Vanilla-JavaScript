@@ -1,0 +1,68 @@
+
+<!-- Synchronous JavaScript: As the name suggests synchronous means to be in a sequence,
+     i.e. every statement of the code gets executed one by one. So, basically a statement
+     has to wait for the earlier statement to get executed.(javascript is an single threaded language) -->
+
+     <!-- posts = loadPostsSync();
+          //fetches posts from some server
+          //wait till posts are fetched
+          //do something with posts
+          doNextThing();
+          //has to wait until posts load
+          //blocking code -->
+
+<!-- Asynchronous code allows the program to be executed immediately
+     where the synchronous code will block further execution of the remaining
+      code until it finishes the current -->
+      <!-- loadPostsSync(function() {  //passing a callback function(much faster than sync js)
+          //wait till posts are fetched
+          //do something with posts
+      });
+          doNextThing(); //dosent have to wait until posts load
+          (start something now and finish later) -->
+
+
+<!-- API stands for Application Program Interface, which can be defined
+     as a set of methods of communication between various software
+      components. In other words, an API allows software to communicate
+       with another software. -->
+
+<!-- there are a few ways to work with async code
+     1. callbacks
+     2. promises
+     3. async/await -->
+
+<!-- AJAX: asynchronous javascript and xml
+           set of web technologies to
+           send and recieve data from client and server asynchronously
+           does not interfere with the current page
+          JSON has replaces XML for the most part
+          make async request in the background
+           no page reload/refresh
+           fetch data
+           very interactive-->
+           
+<!-- XMLHttpRequest(XHR) object:-
+     1. API in the form of an object
+     2. provided by the browsers js environment
+     3. methods transfer data between client/server
+     4. can be used with other protocols than HTTP
+     5. can work with data other than XML(JSON(javascript object notation),plain text) -->
+
+
+<!-- librabies and other methods : fetch api,axios,superagent,jquery,node http -->
+
+<!-- example of asynchronous code
+     console.log(1)
+     console.log(2)
+     setTimeout(()=>{   //this will take time hence output came at last
+          console.log('callback function is fired')
+     },2000)
+     console.log(3)
+     console.log(4)
+     output:-
+          1
+          2
+          3
+          4
+          callback function is fired -->
