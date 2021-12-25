@@ -11,7 +11,7 @@ val = list;
     val = list.childNodes[0];
     val = list.childNodes[0].nodeName;
     val = list.childNodes[3].nodeType;
-
+//different node types
 // 1 - Element
 // 2 - Attribute (deprecated)
 // 3 - Text node
