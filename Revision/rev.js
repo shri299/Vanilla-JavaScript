@@ -1,23 +1,27 @@
-//Event Listners
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
 
-// document.querySelector('.clear-tasks').addEventListener('click',function (e) {
-// console.log("hello world");    
-// e.preventDefault();
-// });
+// clearBtn.addEventListener('click',runevent);
 
-document.querySelector('.clear-tasks').addEventListener('click',onclick);
+// clearBtn.addEventListener('dblclick',runevent);
 
-function onclick(e) {
-    // console.log("hello world");    
-    let val;
-    // val = e;
-    
-    val = e.target;
-    val = e.timeStamp;
-    val = e.clientY;
-    val = e.clientX;
-    val = e.offsetY;
-    val = e.offsetX;
-    console.log(val);
+// clearBtn.addEventListener('mousedown',runevent);
+
+// clearBtn.addEventListener('mouseup',runevent);
+
+// clearBtn.addEventListener('mouseenter',runevent);
+
+// clearBtn.addEventListener('mouseleave',runevent);
+
+// clearBtn.addEventListener('mouseover',runevent);
+// clearBtn.addEventListener('mouseout',runevent);
+
+card.addEventListener('mousemove',runevent);
+
+function runevent(e) {
+    // console.log(`EVENT TYPE: ${e.type}`);
+    // heading.textContent = `${e.offsetX} and ${e.offsetY}`;
+    // document.body.style.background = `rgb(${e.offsetX},${e.offsetY},40)`;
     e.preventDefault();
-    }
+}
