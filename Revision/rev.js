@@ -1,32 +1,43 @@
-const form = document.querySelector('form');
-const taskinput = document.getElementById('task');
-const heading = document.querySelector('h5');
-taskinput.value = '';
-//form.addEventListener('submit',run);
+//event bubbling
 
-// taskinput.addEventListener('keydown',run);
+// document.querySelector('.card-title').addEventListener('click',function () {
+//     console.log('card-title');
+    
+// });
 
-// taskinput.addEventListener('keyup',run);
+// document.querySelector('.card-content').addEventListener('click',function () {
+//     console.log('card-content');
+    
+// });
 
-// taskinput.addEventListener('keypress',run);
+// document.querySelector('.card').addEventListener('click',function () {
+//     console.log('card');
+    
+// });
 
-// taskinput.addEventListener('focus',run);
+// document.querySelector('.col').addEventListener('click',function () {
+//     console.log('col');
+    
+// });
 
-// taskinput.addEventListener('blur',run);
+//event delegation
 
-// taskinput.addEventListener('cut',run);
+//out delegation
 
-// taskinput.addEventListener('paste',run);
+// const delitems = document.querySelector('.delete-item');
 
-// taskinput.addEventListener('input',run);
+// delitems.addEventListener('click',deleteitem);
 
+document.body.addEventListener('click',deleteitem);
 
+function deleteitem(e) {
+    
+    // if (e.target.parentElement.className==='delete-item secondary-content') {
+    //     console.log("deleted");
+    // }
 
-function run(e) {
-    console.log(`event type: ${e.type}`);
-    // console.log(e.target.value);
-    // heading.innerText = e.target.value;
-    // console.log("hello there");
-    // console.log(taskinput.value);
-    // e.preventDefault();
+    if (e.target.classList.contains('delete-item')) {
+        // console.log("deleted");
+        e.target.parentElement.remove();
+    }
 }
