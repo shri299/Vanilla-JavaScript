@@ -1,43 +1,22 @@
-//event bubbling
+// localStorage.setItem('name','srishti');
+// sessionStorage.setItem('name','srivastava');
 
-// document.querySelector('.card-title').addEventListener('click',function () {
-//     console.log('card-title');
-    
+// // localStorage.removeItem('name');
+
+// const namee = localStorage.getItem('name');
+// console.log(namee);
+// localStorage.clear();
+
+// document.querySelector('form').addEventListener('submit',function (e) {
+//     const task = document.getElementById('task').value;
+//     // console.log(task);
+//     // localStorage.setItem('task',task);
+//     let tasks;
+//     if (localStorage.getItem('tasks')==null) {
+//         tasks = [];
+//     }
+//     else{
+//         tasks = JSON.parse(localStorage.getItem('tasks'));
+//     }
+//     tasks.push(task);
 // });
-
-// document.querySelector('.card-content').addEventListener('click',function () {
-//     console.log('card-content');
-    
-// });
-
-// document.querySelector('.card').addEventListener('click',function () {
-//     console.log('card');
-    
-// });
-
-// document.querySelector('.col').addEventListener('click',function () {
-//     console.log('col');
-    
-// });
-
-//event delegation
-
-//out delegation
-
-// const delitems = document.querySelector('.delete-item');
-
-// delitems.addEventListener('click',deleteitem);
-
-document.body.addEventListener('click',deleteitem);
-
-function deleteitem(e) {
-    
-    // if (e.target.parentElement.className==='delete-item secondary-content') {
-    //     console.log("deleted");
-    // }
-
-    if (e.target.classList.contains('delete-item')) {
-        // console.log("deleted");
-        e.target.parentElement.remove();
-    }
-}
