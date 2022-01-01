@@ -1,28 +1,32 @@
-const clearBtn = document.querySelector('.clear-tasks');
-const card = document.querySelector('.card');
+const form = document.querySelector('form');
+const taskinput = document.getElementById('task');
 const heading = document.querySelector('h5');
+taskinput.value = '';
+//form.addEventListener('submit',run);
+
+// taskinput.addEventListener('keydown',run);
+
+// taskinput.addEventListener('keyup',run);
+
+// taskinput.addEventListener('keypress',run);
+
+// taskinput.addEventListener('focus',run);
+
+// taskinput.addEventListener('blur',run);
+
+// taskinput.addEventListener('cut',run);
+
+// taskinput.addEventListener('paste',run);
+
+// taskinput.addEventListener('input',run);
 
 
-// clearBtn.addEventListener('click',runevent);
 
-// clearBtn.addEventListener('dblclick',runevent);
-
-// clearBtn.addEventListener('mousedown',runevent);
-
-// clearBtn.addEventListener('mouseup',runevent);
-
-// clearBtn.addEventListener('mouseenter',runevent);
-
-// clearBtn.addEventListener('mouseleave',runevent);
-
-// clearBtn.addEventListener('mouseover',runevent);
-// clearBtn.addEventListener('mouseout',runevent);
-
-card.addEventListener('mousemove',runevent);
-
-function runevent(e) {
-    // console.log(`EVENT TYPE: ${e.type}`);
-    // heading.textContent = `${e.offsetX} and ${e.offsetY}`;
-    // document.body.style.background = `rgb(${e.offsetX},${e.offsetY},40)`;
-    e.preventDefault();
+function run(e) {
+    console.log(`event type: ${e.type}`);
+    // console.log(e.target.value);
+    // heading.innerText = e.target.value;
+    // console.log("hello there");
+    // console.log(taskinput.value);
+    // e.preventDefault();
 }
