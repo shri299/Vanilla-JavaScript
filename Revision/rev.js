@@ -1,43 +1,34 @@
-//object.prototytpe
-//person.prototype
+//prototypal Inheritence
 
-function Person(firstName,lastName,dob){  //constructor shd start with capital letters
-    this.firstName = firstName;  //name is the property of the contructor person
+function Person(firstName,lastName) {
+    this.firstName = firstName;
     this.lastName = lastName;
-    this.birthday = new Date(dob);
-    // this.getAge = function(){ //method within a constructor
-    //     const diff = Date.now() - this.birthday.getTime();
-    //     const ageDate = new Date(diff);
-    //     return Math.abs(ageDate.getUTCFullYear() - 1970);
-    // }
 }
 
-//calculate age
-
-Person.prototype.getAge = function(){ //method within a constructor
-    const diff = Date.now() - this.birthday.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+Person.prototype.greeting = function () {
+    return `Hello ${this.firstName} ${this.lastName}`;
 }
 
-//get full name
+const person1 = new Person('john','Doe');
 
-Person.prototype.getfullname = function (){
-    return `${this.firstName} ${this.lastName}`
+
+function Customer(firstName,lastName,membership) {
+    Person.call(this,firstName,lastName);
+    this.membership = membership;
 }
 
-//gets married
+//Inherit the Person prototypes
 
-Person.prototype.getsMarried = function (newLastName) {
-    this.lastName = newLastName;
+Customer.prototype = Object.create(Person.prototype);
+Customer.prototype.constructor = Customer;
+
+const cust = new Customer('Tom','Smith','Standard');
+
+console.log(cust.greeting());
+
+Customer.prototype.greeting = function () {
+    console.log("Overriden");
 }
 
-const john = new Person('John','Doe','8-12-99');
-const mary = new Person('Mary','Miller','7-12-90');
+cust.greeting()
 
-console.log(mary.getAge());
-console.log(john.getfullname());
-mary.getsMarried('smith');
-console.log(mary.getfullname());
-
-//console.log(mary);
