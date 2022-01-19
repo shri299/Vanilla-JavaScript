@@ -1,34 +1,29 @@
-//prototypal Inheritence
+//Different way to create objects
 
-function Person(firstName,lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+const personPrototype = {
+    greeting: function () {
+        return "Hello There!"
+    },
+    getsMarried: function (newLastName) {
+        this.lastName = newLastName;
+    }
 }
 
-Person.prototype.greeting = function () {
-    return `Hello ${this.firstName} ${this.lastName}`;
-}
+const mary = Object.create(personPrototype);
+mary.firstName = "Mary";
+mary.lastName = "Williams";
+mary.age = 30;
 
-const person1 = new Person('john','Doe');
+console.log(mary);
+console.log(mary.greeting());
+mary.getsMarried('Thompson');
 
 
-function Customer(firstName,lastName,membership) {
-    Person.call(this,firstName,lastName);
-    this.membership = membership;
-}
+const brad = Object.create(personPrototype,{
+    firstName:{value:"Brad"},
+    lastName:{value:"Traversy"},
+    age:{value:30}
+})
 
-//Inherit the Person prototypes
-
-Customer.prototype = Object.create(Person.prototype);
-Customer.prototype.constructor = Customer;
-
-const cust = new Customer('Tom','Smith','Standard');
-
-console.log(cust.greeting());
-
-Customer.prototype.greeting = function () {
-    console.log("Overriden");
-}
-
-cust.greeting()
-
+console.log(brad);
+console.log(brad.greeting());
