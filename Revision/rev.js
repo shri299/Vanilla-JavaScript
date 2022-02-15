@@ -1,31 +1,27 @@
-//Subclasses or inheritance in ES6
+document.getElementById('button').addEventListener('click',loadData);
 
-class Person
-{
-    constructor(firstName,lastName)
+
+function loadData() {
+    //Create an XHR object
+    const xhr = new XMLHttpRequest();
+
+    //the "open" method
+    xhr.open('GET','revdata.txt',true);
+
+    xhr.onprogress = function () {
+        console.log("used as a loader");
+    }
+
+    xhr.onerror = function () {
+        console.log("request error");
+    }
+
+    xhr.onload = function()
     {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        if(this.status==200)
+        {
+            console.log(this.responseText);
+        }
     }
-    greeting(){
-        return `Hello there ${this.firstName} ${this.lastName}`;
-    }
+    xhr.send();
 }
-
-class Customer extends Person{
-    constructor(firstName,lastName,phone)
-    {
-        super(firstName,lastName);//inheriting from parent
-        this.phone = phone;
-    }
-
-    static getMemebershipCost()
-    {
-        return 500;
-    }
-} 
-
-const john = new Customer("John","Doe","12345677");
-console.log(john); 
-console.log(john.greeting());
-console.log(Customer.getMemebershipCost());
