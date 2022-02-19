@@ -1,54 +1,30 @@
-document.getElementById('button1').addEventListener('click',loadCustomer);
-document.getElementById('button2').addEventListener('click',loadCustomers);
+document.getElementById('get-jokes').addEventListener('click',GetJokes);
 
-function loadCustomer(e) {
+function GetJokes(e) {
+    const number = document.getElementById('number').value;
+    // console.log(number);
     const xhr = new XMLHttpRequest();
+    xhr.open('GET',`http://api.icndb.com/jokes/random/${number}`,true);
 
-    xhr.open("GET","rev1.json",true);
-
-    xhr.onload = function () {
-        if(this.status===200)
+    xhr.onload = function()
+    {
+        if(xhr.status===200)
         {
-            //document.getElementById('customer').innerText = this.responseText;
-            const customer = JSON.parse(this.responseText);
-
-            const output = `<ul>
-            <li>ID: ${customer.id}</li>
-            <li>NAME: ${customer.name}</li>
-            <li>COMPANY: ${customer.company}</li>
-            <li>PHONE: ${customer.phone}</li></ul>`
-
-            document.getElementById('customer').innerHTML = output;
-        }
-    }
-
-    xhr.send();
-}
-
-
-function loadCustomers(e) {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open("GET","rev2.json",true);
-
-    xhr.onload = function () {
-        if(this.status===200)
-        {
-            //document.getElementById('customer').innerText = this.responseText;
-            const customers = JSON.parse(this.responseText);
+            const response = JSON.parse(this.responseText);
             let output = '';
-            customers.forEach(function(customer){
-                output += `<ul>
-                <li>ID: ${customer.id}</li>
-                <li>NAME: ${customer.name}</li>
-                <li>COMPANY: ${customer.company}</li>
-                <li>PHONE: ${customer.phone}</li></ul>`
-            });
-            
-
-            document.getElementById('Customers').innerHTML = output;
+            if(response.type ==='success')
+            {
+                response.value.forEach(function(joke){
+                    output += `<li>${joke.joke}</li>`;
+                });
+            }
+            else{
+                output += `<li>Something Went Wrong</li>`;
+            }
         }
-    }
 
+        document.querySelector('.jokes').innerHTML = output;
+    }
     xhr.send();
+    e.preventDefault();
 }
