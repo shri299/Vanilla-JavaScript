@@ -1,30 +1,41 @@
-document.getElementById('get-jokes').addEventListener('click',GetJokes);
+const posts = [{title : "Post One", body:"This is Post One"},
+               {title : "Post Two", body:"This is Post Two"},
+               {title : "Post Three", body:"This is Post Three"}];
 
-function GetJokes(e) {
-    const number = document.getElementById('number').value;
-    // console.log(number);
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET',`http://api.icndb.com/jokes/random/${number}`,true);
+// function createPost(post) {
+//     setTimeout(function() {
+//         posts.push(post);
+//     },2000);
+// }
 
-    xhr.onload = function()
-    {
-        if(xhr.status===200)
-        {
-            const response = JSON.parse(this.responseText);
-            let output = '';
-            if(response.type ==='success')
-            {
-                response.value.forEach(function(joke){
-                    output += `<li>${joke.joke}</li>`;
-                });
-            }
-            else{
-                output += `<li>Something Went Wrong</li>`;
-            }
-        }
+// function getPost() {
+//     setTimeout(function() {
+//         let output = '';
+//         posts.forEach(function(post) {
+//             output += `<li>${post.title}</li>`
+//         });
+//         document.body.innerHTML = output;
+//     },1000);
+// }
 
-        document.querySelector('.jokes').innerHTML = output;
-    }
-    xhr.send();
-    e.preventDefault();
+
+function createPost(post,callback) {
+    setTimeout(function() {
+        posts.push(post);
+        callback();
+    },2000);
 }
+
+function getPost() {
+    setTimeout(function() {
+        let output = '';
+        posts.forEach(function(post) {
+            output += `<li>${post.title}</li>`
+        });
+        document.body.innerHTML = output;
+    },1000);
+}
+
+
+createPost({title:"Post Four",body:"This is Post Four"},getPost);
+// getPost();
