@@ -1,41 +1,22 @@
-const posts = [{title : "Post One", body:"This is Post One"},
-               {title : "Post Two", body:"This is Post Two"},
-               {title : "Post Three", body:"This is Post Three"}];
-
-// function createPost(post) {
-//     setTimeout(function() {
-//         posts.push(post);
-//     },2000);
-// }
-
-// function getPost() {
-//     setTimeout(function() {
-//         let output = '';
-//         posts.forEach(function(post) {
-//             output += `<li>${post.title}</li>`
-//         });
-//         document.body.innerHTML = output;
-//     },1000);
-// }
-
-
-function createPost(post,callback) {
-    setTimeout(function() {
-        posts.push(post);
-        callback();
-    },2000);
+//We are using JSONtypicode(JSONPlaceholder)//fake online restAPI
+function easyHTTP() { //contructor
+    this.http = new XMLHttpRequest(); //property of the constructor
 }
 
-function getPost() {
-    setTimeout(function() {
-        let output = '';
-        posts.forEach(function(post) {
-            output += `<li>${post.title}</li>`
-        });
-        document.body.innerHTML = output;
-    },1000);
+//Make an HTTP GET request
+easyHTTP.prototype.get = function(url,callback) {
+    this.http.open('GET',url,true);
+    let self = this;
+    this.http.onload = function() {
+        if(self.http.status === 200){
+            callback(null,self.http.responseText);
+        }
+        else{
+            callback("ERROR" + self.http.status);
+        }
+    }
+    this.http.send();
 }
-
-
-createPost({title:"Post Four",body:"This is Post Four"},getPost);
-// getPost();
+//Make an HTTP GET request
+//Make an HTTP GET request
+//Make an HTTP GET request
