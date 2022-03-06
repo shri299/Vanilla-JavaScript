@@ -18,19 +18,29 @@ const http = new easyHTTP;
 //create data to be added
 
 const data = {
-    userId: 101,
     title: "Custom Post",
     body: "This is Custom Post"
 };
 
-http.post('https://jsonplaceholder.typicode.com/posts',data,function(err,postdata){
-    if (err) {
-        console.log(err);
-    }
-    else{
-        console.log(postdata);
-    }
+// http.post('https://jsonplaceholder.typicode.com/posts',data,function(err,postdata){
+//     if (err) {
+//         console.log(err);
+//     }
+//     else{
+//         console.log(postdata);
+//     }
     
+// });
+
+//PUT REQUEST
+
+http.put('https://jsonplaceholder.typicode.com/posts/1',data,function(err,postdata){
+    if (err) {
+                 console.log(err);
+             }
+            else{
+                console.log(postdata);
+            }
 });
 
 
