@@ -34,15 +34,25 @@ const data = {
 
 //PUT REQUEST
 
-http.put('https://jsonplaceholder.typicode.com/posts/1',data,function(err,postdata){
+// http.put('https://jsonplaceholder.typicode.com/posts/1',data,function(err,postdata){
+//     if (err) {
+//                  console.log(err);
+//              }
+//             else{
+//                 console.log(postdata);
+//             }
+// });
+
+
+//DELETE REQUEST
+
+http.delete('https://jsonplaceholder.typicode.com/posts/1',function(err,response){
     if (err) {
-                 console.log(err);
-             }
-            else{
-                console.log(postdata);
-            }
+        console.log(err);
+    }
+    else{
+        console.log(response);
+    }
 });
-
-
 
 
