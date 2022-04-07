@@ -12,9 +12,13 @@ const request = new XMLHttpRequest();
 //checking change in state after each step 
 request.addEventListener('readystatechange',()=>{
     //console.log(request,request.readyState);
+
     //we can use or access the data only at ready state 4
-    if (request.readyState===4) {
+    if (request.readyState===4 && request.status===200) {
         console.log(request.responseText);
+    }
+    else if (request.readyState===4) {
+        console.log("could not fetch the data");
     }
 })
 
