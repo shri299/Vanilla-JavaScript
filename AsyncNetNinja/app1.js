@@ -5,26 +5,46 @@
 //we can make our own api using any server side language :-)
 //we typically get back data in json format
 
+const getpost = (callback) =>{
+    //create a request object
+    const request = new XMLHttpRequest();
 
-//create a request object
-const request = new XMLHttpRequest();
 
-//checking change in state after each step 
-request.addEventListener('readystatechange',()=>{
-    //console.log(request,request.readyState);
+    //checking change in state after each step 
+    request.addEventListener('readystatechange',()=>{
+        //console.log(request,request.readyState);
 
-    //we can use or access the data only at ready state 4
-    if (request.readyState===4 && request.status===200) {
-        console.log(request.responseText);
+        //we can use or access the data only at ready state 4
+        if (request.readyState===4 && request.status===200) {
+            //console.log(request.responseText);
+            callback(undefined, request.responseText);
+        }
+        else if (request.readyState===4) {
+            //console.log("could not fetch the data");
+            callback("could not fetch data",undefined);
+        }
+    })
+
+    //preparing to send the request
+    request.open('GET','https://jsonplaceholder.typicode.com/posts/');
+
+
+    //sending the request
+    request.send();
+}
+
+console.log(1);
+console.log(2);
+console.log(3);
+
+getpost((err,data) => {
+    if (err) {
+        console.log(err);
     }
-    else if (request.readyState===4) {
-        console.log("could not fetch the data");
+    else{
+        console.log(data);
     }
-})
+});
 
-//preparing to send the request
-request.open('GET','https://jsonplaceholder.typicode.com/posts/');
-
-
-//sending the request
-request.send();
+console.log(4);
+console.log(5);
