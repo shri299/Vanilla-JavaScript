@@ -29,3 +29,33 @@ getpost('post.json',(data)=>{
     });
 })
 
+
+//promise example
+
+const getsomething = () =>{
+    //resolve and reject are built in parameters
+    //resolve : we get the data we want
+    //reject : we get error and reject the promise
+    return new Promise((resolve,reject)=>{
+        //make a network request
+        //resolve("some data");
+        reject("some error");
+    });
+}
+
+//if promise is resolved and data is returned then what to do with data
+//even if its erro i need to display it
+//1st callback is resolve function and 2ns callback is reject function
+getsomething().then((data)=>{
+    console.log(data);
+},(err)=>{
+    console.log(err);
+})
+
+
+getsomething().then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+})
+
