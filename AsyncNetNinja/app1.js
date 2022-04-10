@@ -28,7 +28,7 @@ const getpost = (callback) =>{
     })
 
     //preparing to send the request
-    request.open('GET','https://jsonplaceholder.typicode.com/posts/');
+    request.open('GET','post.json');
 
 
     //sending the request

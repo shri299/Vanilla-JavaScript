@@ -1,10 +1,10 @@
-//example of asyn js code
+//example of async js code
 
 console.log(1);
 console.log(2);
 //this does not block the code because of callback function
 setTimeout(() => {
-    console.log("callback fucntion fired");
+    console.log("callback function fired");
 }, 2000);
 console.log(3);
 console.log(4);
@@ -17,4 +17,4 @@ console.log(4);
 //sync js
 
     //only one statement is executed at a time in sequence.
-    //this makes js a threaded language
+    //this makes js a single threaded language
