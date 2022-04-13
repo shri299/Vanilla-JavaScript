@@ -21,6 +21,12 @@ const getpost = (resource) => {
 
 getpost('post.json').then((data)=>{
     console.log(data);
+    return getpost('post1.json');
+}).then((data)=>{
+    console.log(data);
+    return getpost('post2.json');
+}).then((data)=>{
+    console.log(data);
 }).catch((err)=>{
     console.log(err);
 })
