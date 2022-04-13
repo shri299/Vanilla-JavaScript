@@ -5,8 +5,11 @@
 //await makes res and data variable wait, so that promise returned by fetch and res.json() is resolved and then assign the data returned by these two to respective variables
 
 const getpost = async ()=>{
-    const res = await fetch('post.json');
+    const res = await fetch('postt.json');
     //console.log(res);
+    if (res.status!==200) {
+        throw new Error('Cannot fetch the data');
+    }
     const data = await res.json();
     //console.log(data);
     return data;
@@ -16,4 +19,6 @@ const getpost = async ()=>{
 
 const test = getpost().then((data)=>{
     console.log(data);
+}).catch((err)=>{
+    console.log("Error",err.message);
 });
