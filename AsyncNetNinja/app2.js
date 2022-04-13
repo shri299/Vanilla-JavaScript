@@ -44,8 +44,8 @@ const getsomething = () =>{
 }
 
 //if promise is resolved and data is returned then what to do with data
-//even if its erro i need to display it
-//1st callback is resolve function and 2ns callback is reject function
+//even if its error i need to display it
+//1st callback is resolve function and 2nd callback is reject function
 getsomething().then((data)=>{
     console.log(data);
 },(err)=>{
