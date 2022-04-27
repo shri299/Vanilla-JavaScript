@@ -6,6 +6,8 @@ re = /hello/i; //adding an i flag makes it case insensitive
 console.log(re);
 console.log(re.source);
 
+//Different types of evaluation functions
+
 //exec()  return result in array if match or else null.
 
 //const result = re.exec("hello world");
