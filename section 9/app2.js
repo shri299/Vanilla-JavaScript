@@ -17,8 +17,32 @@ re = /gre?a?y/i; //it can be either e or a  or niether one of them is also fine
 re = /gre?a?y\?/i;
 
 
+//brackets: charecter sets
+
+re = /gr[ae]y/i;  //must be an a or e
+re = /[gt]ray/i;
+re = /[^gt]ray/i; //must be anything except a or e
+re = /[a-z]ray/i;
+re = /[0-9]ray/i;
+re = /[0-9][0-9][a-z]ray/i;
+
+
+//braces - quantifiers
+
+re = /hello/i;
+re = /hel{2}o/i; //l must occur exactly 2 times
+re = /hel{2,4}o/i; //2 to 4 l's are permitted
+re = /hel{2,}o/i; //atleast 2 times
+
+//parenthesis
+
+re = /[0-9]g(3)/i; //2xxx,4xxx and so
+re = /([0-9]x)(3)/i; //2x2x2x,4x4x4x,2x2x2x2x2x2x and so //more than 3 times
+re = /^([0-9]x)(3)/i; //only 3 times
+
+
 //const str = 'Hello world';
-const str = 'gry';
+const str = 'hello';
 //const str = 'gray?';
 const result = re.exec(str); 
 console.log(result);
