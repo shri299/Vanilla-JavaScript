@@ -40,6 +40,23 @@ re = /[0-9]g(3)/i; //2xxx,4xxx and so
 re = /([0-9]x)(3)/i; //2x2x2x,4x4x4x,2x2x2x2x2x2x and so //more than 3 times
 re = /^([0-9]x)(3)/i; //only 3 times
 
+//shorthand charecter classes
+
+re = /\w/; //word charecter - alphanumeric charecter(all alphabet/number/underscore will match)
+re = /\w+/; //looks for all charecters
+re = /\W/; //anything but alphanumeric/underscore
+re = /\d/; //will match any digits
+re = /\w+/; //will check for all of them
+re = /\D/;  //everything except digits
+re = /\s/; //checks for whitespace
+re = /\S/;  //anything but whitespace
+re = /hell\b/i; //will only look for hell not hello or any word which contains hell
+
+//assertions
+
+//re = /x(?=y)/; //match x only if its followed by y
+re = /x(?!=y)/;
+
 
 //const str = 'Hello world';
 const str = 'hello';
