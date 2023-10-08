@@ -13,7 +13,8 @@
 let val;
 
 val = document; //gives the entire html document
-val = document.all; //gives html collection(like an array but not an array)(we cant use foreach on them)
+console.log(val);
+val = document.all; //gives html collection(like an array but not an array)(we cannot use foreach on them)
 val = document.all[2]; 
 val = document.all.length;
 val = document.head;
@@ -51,4 +52,3 @@ scriptsArr.forEach(function(script) {
   console.log(script.getAttribute('src'));
 });
 
-console.log(val);

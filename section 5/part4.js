@@ -15,7 +15,7 @@
 
     const person1 = new person('john','doe');
 
-    //console.log(person1.greeting());
+    console.log(person1.greeting());
 
 //customer constructor
 
@@ -37,8 +37,8 @@
 
     const  cust1 = new customer('tom','smith','12345678','standard');
 
-    console.log(cust1);
-    console.log(cust1.greeting());
+    //console.log(cust1);
+    //console.log(cust1.greeting());
 
     //customer greeting(to ovveride above greeting)
 
@@ -48,4 +48,4 @@
 
         }
 
-        console.log(cust1.greeting());
+        //console.log(cust1.greeting());
