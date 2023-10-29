@@ -17,16 +17,29 @@
 
 
 
-function z(){
-    var b = 200;
-    function x(){
-        var a= 6;
-        function y(){
-            console.log(a,b);
-        }
-        y();
-    }
-    x();
-}
+// function z(){
+//     var b = 200;
+//     function x(){
+//         var a= 6;
+//         function y(){
+//             console.log(a,b);
+//         }
+//         y();
+//     }
+//     x();
+// }
 
-z();
+// z();
+
+
+
+//settimeout and closures
+
+function x(){
+    var i =1;
+    setTimeout(()=>{
+        console.log(i);
+    },2000);
+    console.log("hello there");
+}
+x();

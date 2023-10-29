@@ -30,6 +30,19 @@ checking();
 
 
 
+let num = 10;
+
+function something(){
+    let count=0;
+    let element = document.querySelector('button');
+    element.addEventListener('click',()=>{
+        console.log(num++);
+        console.log(count++);
+    })
+}
+
+
+
 
 
 
