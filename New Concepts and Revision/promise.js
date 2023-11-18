@@ -37,14 +37,15 @@
 function testing(name){
     return new Promise((resolve,reject)=>{
         console.log(name);
-        resolve();
+        resolve(99);
     });
 }
 
 testing("srishti").then(()=>{
     console.log("promise reolved");
     return testing("runjhun");
-}).then(()=>{
+}).then((r)=>{
+    console.log(r);
     console.log("second promise resolved");;
 });
 
